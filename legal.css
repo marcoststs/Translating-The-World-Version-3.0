@@ -1,0 +1,119 @@
+/* ==========================================================
+   Páginas legales (aviso-legal, politica-de-privacidad, politica-cookies)
+   ========================================================== */
+
+.legal__main {
+    padding: 9rem 0 5rem;
+    background: var(--c-bg);
+    min-height: 100vh;
+}
+
+.legal__container {
+    max-width: 820px;
+}
+
+.legal__head {
+    text-align: center;
+    margin-bottom: var(--s-6);
+    padding-bottom: var(--s-4);
+    border-bottom: 1px solid var(--c-line);
+}
+
+.legal__title {
+    font-family: var(--font-display);
+    font-size: clamp(2.2rem, 4.5vw, 3.2rem);
+    font-weight: 700;
+    letter-spacing: -0.035em;
+    line-height: 1.05;
+    margin: 0.75rem 0 1rem;
+}
+
+.legal__updated {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--c-muted);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.legal__content {
+    background: var(--c-container);
+    border: 1px solid var(--c-container-border);
+    border-radius: var(--radius-lg);
+    padding: 3rem;
+    box-shadow: var(--shadow-sm);
+}
+
+.legal__content section {
+    margin-bottom: 2.5rem;
+}
+
+.legal__content section:last-child {
+    margin-bottom: 0;
+}
+
+.legal__content h2 {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.85rem;
+    color: white;
+}
+
+.legal__content h3 {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-top: 1.25rem;
+    margin-bottom: 0.6rem;
+    color: white;
+}
+
+.legal__content p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.97rem;
+    line-height: 1.7;
+    margin-bottom: 0.85rem;
+}
+
+.legal__content ul,
+.legal__content ol {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.97rem;
+    line-height: 1.7;
+    margin: 0 0 1rem 0;
+    padding-left: 1.25rem;
+}
+
+.legal__content li {
+    margin-bottom: 0.4rem;
+}
+
+.legal__content a {
+    color: white;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+    transition: color 0.2s;
+}
+
+.legal__content a:hover {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.legal__content strong {
+    color: white;
+    font-weight: 600;
+}
+
+@media (max-width: 720px) {
+    .legal__main { padding: 7rem 0 3rem; }
+    .legal__content { padding: 1.75rem; }
+}
+
+@media (max-width: 480px) {
+    .legal__content { padding: 1.25rem; }
+    .legal__content ul,
+    .legal__content ol { padding-left: 1rem; }
+}

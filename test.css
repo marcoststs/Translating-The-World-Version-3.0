@@ -1,0 +1,547 @@
+/* ==========================================================
+   Página de prueba de nivel (prueba-de-nivel.html)
+   - Reutiliza legal.css para el caparazón
+   - Añade estilos del wizard (hero, pasos, preguntas, éxito)
+   ========================================================== */
+
+/* ---------- Cabecera / contenedor ---------- */
+.test__container {
+    max-width: 960px;
+}
+
+.test__main {
+    padding-top: 8rem;
+    padding-bottom: 5rem;
+}
+
+@media (max-width: 720px) {
+    .test__main { padding-top: 6.5rem; padding-bottom: 3rem; }
+}
+
+/* ---------- Hero ---------- */
+.test__hero {
+    text-align: center;
+    margin-bottom: var(--s-5);
+    padding-bottom: var(--s-4);
+    border-bottom: 1px solid var(--c-line);
+}
+
+.test__hero .legal__title {
+    margin-top: 0.75rem;
+}
+
+.test__hero-lead {
+    color: var(--c-ink-soft);
+    font-size: 1.05rem;
+    line-height: 1.65;
+    max-width: 640px;
+    margin: 1rem auto 0;
+}
+
+.test__hero-meta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1.25rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--c-line);
+    border-radius: 999px;
+    background: var(--c-surface);
+    color: var(--c-muted);
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.test__hero-meta strong {
+    color: var(--c-ink);
+    font-weight: 600;
+}
+
+/* ---------- Barra de progreso global (sticky) ---------- */
+.test__progress {
+    position: sticky;
+    top: 80px;
+    z-index: 10;
+    background: var(--c-surface);
+    border: 1px solid var(--c-line);
+    border-radius: 999px;
+    padding: 0.85rem 1.25rem;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: var(--s-5);
+    box-shadow: var(--shadow-sm);
+}
+
+.test__progress-bar {
+    position: relative;
+    height: 6px;
+    background: var(--c-line);
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.test__progress-bar::after {
+    content: "";
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: var(--test-progress, 33%);
+    background: linear-gradient(90deg, var(--c-primary), var(--c-primary-dark));
+    border-radius: 999px;
+    transition: width 0.4s ease-out;
+}
+
+.test__progress-label {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--c-muted);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.test__progress-label strong {
+    color: var(--c-ink);
+    font-weight: 600;
+}
+
+@media (max-width: 720px) {
+    .test__progress { top: 70px; padding: 0.7rem 1rem; }
+    .test__progress-label { font-size: 0.7rem; }
+    /* iOS Safari no hace zoom automático si el campo es >= 16px */
+    .test__form-group input,
+    .test__form-group select,
+    .test__form-group textarea { font-size: 16px; }
+}
+
+/* ---------- Step panes ---------- */
+.test__step { display: none; animation: testFadeIn 0.3s ease-out; }
+.test__step.is-active { display: block; }
+
+@keyframes testFadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .test__step { animation: none; }
+}
+
+/* ---------- Tarjeta de paso ---------- */
+.test__card {
+    background: var(--c-container);
+    border: 1px solid var(--c-container-border);
+    border-radius: var(--radius-lg);
+    padding: clamp(1.75rem, 4vw, 3rem);
+    box-shadow: var(--shadow-sm);
+}
+
+.test__card-head {
+    margin-bottom: var(--s-4);
+    padding-bottom: var(--s-3);
+    border-bottom: 1px solid var(--c-line);
+}
+
+.test__card-eyebrow {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 0.5rem;
+}
+
+.test__card-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 2.6vw, 1.9rem);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: white;
+    margin: 0;
+}
+
+.test__card-title em {
+    color: white;
+    font-style: italic;
+}
+
+.test__card-lead {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0.85rem 0 0;
+}
+
+.test__card-meta {
+    margin-top: 1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.75);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.test__card-meta strong {
+    color: white;
+    font-weight: 600;
+}
+
+/* ---------- Formulario paso 1 ---------- */
+.test__form {
+    display: grid;
+    gap: 1.25rem;
+}
+
+.test__form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+}
+
+@media (max-width: 640px) {
+    .test__form-row { grid-template-columns: 1fr; }
+}
+
+.test__form-group {
+    display: grid;
+    gap: 0.4rem;
+}
+
+.test__form-group label {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.test__form-group label .test__req {
+    color: white;
+    margin-left: 0.15rem;
+}
+
+.test__form-group input,
+.test__form-group select,
+.test__form-group textarea {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    background: var(--c-surface);
+    border: 1px solid var(--c-line);
+    border-radius: var(--radius);
+    color: var(--c-ink);
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    line-height: 1.4;
+    transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+}
+
+.test__form-group input:focus,
+.test__form-group select:focus,
+.test__form-group textarea:focus {
+    outline: none;
+    border-color: var(--c-accent);
+    box-shadow: 0 0 0 3px var(--c-accent-soft);
+}
+
+.test__form-group input.is-error,
+.test__form-group select.is-error {
+    border-color: var(--c-accent);
+    background: #fff5f0;
+}
+
+.test__check {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.92);
+    cursor: pointer;
+}
+
+.test__check input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    margin-top: 2px;
+    border: 1.5px solid var(--c-line-strong);
+    border-radius: 4px;
+    background: var(--c-surface);
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: background 0.2s, border-color 0.2s;
+    position: relative;
+}
+
+.test__check input[type="checkbox"]:checked {
+    background: var(--c-accent);
+    border-color: var(--c-accent);
+}
+
+.test__check input[type="checkbox"]:checked::after {
+    content: "";
+    position: absolute;
+    inset: 3px 4px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg) translate(-1px, -1px);
+    width: 4px;
+    height: 8px;
+}
+
+.test__check input[type="checkbox"].is-error {
+    border-color: var(--c-accent);
+    box-shadow: 0 0 0 3px var(--c-accent-soft);
+}
+
+.test__check a {
+    color: white;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.test__actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: var(--s-4);
+    padding-top: var(--s-3);
+    border-top: 1px solid var(--c-line);
+    flex-wrap: wrap;
+}
+
+.test__actions-note {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 0.85rem;
+}
+
+.test__actions-buttons {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-left: auto;
+}
+
+@media (max-width: 480px) {
+    .test__actions-buttons { width: 100%; }
+    .test__actions-buttons .btn { flex: 1; justify-content: center; }
+}
+
+/* ---------- Preguntas paso 2 ---------- */
+.test__questions {
+    display: grid;
+    gap: 1.25rem;
+    margin-top: 0.5rem;
+}
+
+.test__question {
+    /* Reset del margen nativo del fieldset + evita desbordes en grid/móvil */
+    margin: 0;
+    min-width: 0;
+    border: 1px solid var(--c-line);
+    border-radius: var(--radius);
+    padding: 1.25rem 1.4rem;
+    background: var(--c-surface);
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.test__question:hover {
+    border-color: var(--c-line-strong);
+}
+
+.test__question legend {
+    /* El legend nativo se dibuja sobre la línea del borde del fieldset.
+       Con float se saca de esa ranura y pasa a fluir dentro del recuadro,
+       alineado con el resto del contenido. width:100% evita que el
+       enunciado se coloque a su lado. */
+    float: left;
+    width: 100%;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--c-muted);
+    margin: 0 0 0.5rem;
+}
+
+.test__question legend strong {
+    color: var(--c-ink);
+    font-weight: 600;
+    letter-spacing: 0.04em;
+}
+
+.test__question-prompt {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--c-ink);
+    margin: 0 0 0.85rem;
+    font-weight: 500;
+}
+
+.test__options {
+    display: grid;
+    gap: 0.6rem;
+}
+
+.test__option {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: start;
+    gap: 0.75rem;
+    padding: 0.7rem 0.9rem;
+    border: 1px solid var(--c-line);
+    border-radius: var(--radius-sm);
+    background: var(--c-surface);
+    cursor: pointer;
+    transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    color: var(--c-ink-soft);
+}
+
+.test__option:hover {
+    border-color: var(--c-line-strong);
+    background: var(--c-primary-soft);
+}
+
+.test__option input[type="radio"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    margin-top: 2px;
+    border: 1.5px solid var(--c-line-strong);
+    border-radius: 50%;
+    background: var(--c-surface);
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: border-color 0.2s, background 0.2s;
+    position: relative;
+}
+
+.test__option input[type="radio"]:checked {
+    border-color: var(--c-accent);
+    background: var(--c-accent);
+    box-shadow: 0 0 0 4px var(--c-accent-soft);
+}
+
+.test__option input[type="radio"]:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px var(--c-accent-soft);
+}
+
+.test__option:has(input:checked) {
+    border-color: var(--c-accent);
+    background: var(--c-accent-soft);
+    color: var(--c-ink);
+    font-weight: 500;
+}
+
+.test__question.is-error {
+    border-color: var(--c-accent);
+    box-shadow: 0 0 0 3px var(--c-accent-soft);
+}
+
+.test__option-error {
+    margin: 0.5rem 0 0;
+    color: var(--c-accent);
+    font-size: 0.82rem;
+    font-weight: 500;
+    display: none;
+}
+
+.test__question.is-error .test__option-error {
+    display: block;
+}
+
+/* ---------- Error de envío (paso 2) ---------- */
+.test__submit-error {
+    margin: 1rem 0 0;
+    color: var(--c-accent);
+    background: var(--c-accent-soft);
+    border: 1px solid var(--c-accent);
+    border-radius: var(--radius-sm);
+    padding: 0.85rem 1rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+.test__submit-error a {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+/* ---------- Paso 3 — éxito ---------- */
+.test__success {
+    text-align: center;
+    padding: var(--s-4) 0;
+}
+
+.test__success__icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.5rem;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #1f7a3a, #2ea15a);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.2rem;
+    font-weight: 700;
+    box-shadow: 0 8px 24px rgba(31, 122, 58, 0.25);
+}
+
+.test__success__title {
+    font-family: var(--font-display);
+    font-size: clamp(1.6rem, 3vw, 2.1rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: white;
+    margin: 0 0 1rem;
+}
+
+.test__success__text {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1rem;
+    line-height: 1.65;
+    max-width: 560px;
+    margin: 0 auto 0.85rem;
+}
+
+.test__success__text strong { color: white; font-weight: 600; }
+
+.test__success__actions {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-top: var(--s-4);
+    flex-wrap: wrap;
+}
+
+@media (max-width: 480px) {
+    .test__success__actions .btn { width: 100%; justify-content: center; }
+}
+
+/* ---------- Aviso paso 1 (sin questions definidas) ---------- */
+.test__empty {
+    margin: 0 0 1.5rem;
+    padding: 1rem 1.25rem;
+    border: 1px dashed rgba(255, 255, 255, 0.4);
+    border-radius: var(--radius);
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.92rem;
+}
+
+.test__empty a { color: white; text-decoration: underline; }

@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f0a878" />
+    <meta name="description" content="Prueba de nivel de inglés gratuita de Translating The World. 26 preguntas tipo test, informe personalizado con tu nivel MCER (A1–C2) en 48 horas." />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Prueba de nivel de inglés gratuita — Translating The World</title>
+    <link rel="canonical" href="https://www.translatingtheworld.com/prueba-de-nivel.html" />
+    <meta property="og:title" content="Prueba de nivel de inglés gratuita — Translating The World" />
+    <meta property="og:description" content="Descubre tu nivel de inglés en 10 minutos. 26 preguntas, corrección humana y recomendación a medida en 48 h." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.translatingtheworld.com/prueba-de-nivel.html" />
+    <link rel="icon" type="image/jpeg" href="Favicon.jpg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="legal.css" />
+    <link rel="stylesheet" href="test.css" />
+</head>
+<body class="legal test">
+    <header class="header" id="header">
+        <div class="container header__container">
+            <a href="index.html" class="logo">
+                <img class="logo__img" src="Logo.png" alt="" aria-hidden="true">
+            </a>
+            <nav class="nav">
+                <a href="index.html" class="nav__link">← Volver a la web</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="legal__main test__main">
+        <div class="container test__container">
+
+            <!-- ========== HERO ========== -->
+            <header class="test__hero">
+                <span class="eyebrow"><span class="eyebrow__dot"></span>Prueba de nivel</span>
+                <h1 class="legal__title">Descubre tu nivel de inglés en <em>10 minutos</em></h1>
+                <p class="test__hero-lead">
+                    Responde a 26 preguntas tipo test, recibe una corrección humana de uno de nuestros
+                    profesores nativos y obtén un informe personalizado con tu nivel (A1–C2), tus puntos
+                    fuertes y un plan de estudio a medida.
+                </p>
+                <span class="test__hero-meta">
+                    ⚡ 10 min · <strong>100% gratuita</strong> · Sin compromiso
+                </span>
+            </header>
+
+            <!-- ========== BARRA DE PROGRESO GLOBAL ========== -->
+            <div class="test__progress" role="progressbar" aria-valuemin="1" aria-valuemax="3" aria-valuenow="1" aria-label="Progreso de la prueba de nivel">
+                <div class="test__progress-bar" id="test-progress-bar" style="--test-progress: 33%;"></div>
+                <span class="test__progress-label" id="test-progress-label">Paso <strong>1</strong> de 3</span>
+            </div>
+
+            <!-- ========== PASO 1: DATOS ========== -->
+            <section id="test-step-1" class="test__step" aria-labelledby="test-step-1-title">
+                <div class="test__card">
+                    <header class="test__card-head">
+                        <span class="test__card-eyebrow">Paso 1 · Tus datos</span>
+                        <h2 class="test__card-title" id="test-step-1-title">Cuéntanos sobre <em>ti</em></h2>
+                        <p class="test__card-lead">
+                            Necesitamos estos datos para enviarte el informe personalizado con tu nivel estimado y la recomendación de un profesor nativo.
+                        </p>
+                    </header>
+
+                    <form id="test-step-1-form" class="test__form" novalidate>
+                        <div class="test__form-row">
+                            <div class="test__form-group">
+                                <label for="lt-name">Nombre completo <span class="test__req" aria-hidden="true">*</span></label>
+                                <input type="text" id="lt-name" name="name" autocomplete="name" required />
+                            </div>
+                            <div class="test__form-group">
+                                <label for="lt-email">Correo electrónico <span class="test__req" aria-hidden="true">*</span></label>
+                                <input type="email" id="lt-email" name="email" autocomplete="email" required />
+                            </div>
+                        </div>
+
+                        <div class="test__form-row">
+                            <div class="test__form-group">
+                                <label for="lt-phone">Teléfono (opcional)</label>
+                                <input type="tel" id="lt-phone" name="phone" autocomplete="tel" />
+                            </div>
+                            <div class="test__form-group">
+                                <label for="lt-age">Edad</label>
+                                <select id="lt-age" name="age">
+                                    <option value="">Selecciona tu franja</option>
+                                    <option value="<18">Menos de 18</option>
+                                    <option value="18-24">18 – 24</option>
+                                    <option value="25-34">25 – 34</option>
+                                    <option value="35-44">35 – 44</option>
+                                    <option value="45-54">45 – 54</option>
+                                    <option value="55+">55 o más</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="test__form-row">
+                            <div class="test__form-group">
+                                <label for="lt-reason">¿Por qué quieres aprender inglés?</label>
+                                <select id="lt-reason" name="reason">
+                                    <option value="">Selecciona una opción</option>
+                                    <option value="trabajo">Trabajo</option>
+                                    <option value="estudios">Estudios / oposiciones</option>
+                                    <option value="viajar">Viajar</option>
+                                    <option value="interes">Interés personal</option>
+                                    <option value="examen">Preparar un examen (Cambridge, TOEFL…)</option>
+                                    <option value="otro">Otro</option>
+                                </select>
+                            </div>
+                            <div class="test__form-group">
+                                <label for="lt-level">¿Cómo describirías tu nivel actual?</label>
+                                <select id="lt-level" name="selfLevel">
+                                    <option value="">Selecciona un nivel</option>
+                                    <option value="A1">A1 — Principiante</option>
+                                    <option value="A2">A2 — Elemental</option>
+                                    <option value="B1">B1 — Intermedio</option>
+                                    <option value="B2">B2 — Intermedio alto</option>
+                                    <option value="C1">C1 — Avanzado</option>
+                                    <option value="C2">C2 — Maestría</option>
+                                    <option value="ns">No estoy seguro</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <label class="test__check">
+                            <input type="checkbox" id="lt-privacy" name="privacy" required />
+                            <span>He leído y acepto la <a href="politica-de-privacidad.html" target="_blank" rel="noopener">política de privacidad</a> <span class="test__req" aria-hidden="true">*</span></span>
+                        </label>
+                        <label class="test__check">
+                            <input type="checkbox" id="lt-marketing" name="marketing" />
+                            <span>Quiero recibir noticias, recursos y ofertas puntuales por email. Puedo darme de baja cuando quiera.</span>
+                        </label>
+
+                        <div class="test__actions">
+                            <span class="test__actions-note">Tus datos están seguros y no se comparten.</span>
+                            <div class="test__actions-buttons">
+                                <button type="reset" class="btn btn--ghost">Limpiar</button>
+                                <button type="submit" class="btn btn--primary">
+                                    Continuar al test
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+            <!-- ========== PASO 2: PREGUNTAS ========== -->
+            <section id="test-step-2" class="test__step is-active" aria-labelledby="test-step-2-title">
+                <div class="test__card">
+                    <header class="test__card-head">
+                        <span class="test__card-eyebrow">Paso 2 · El test</span>
+                        <h2 class="test__card-title" id="test-step-2-title">26 preguntas de <em>gramática inglesa</em></h2>
+                        <p class="test__card-lead">
+                            Responde a las preguntas. No te preocupes si no las sabes todas: forma parte del test.
+                            Tienes <strong>sin límite de tiempo</strong> y puedes volver atrás para revisarlas.
+                        </p>
+                        <span class="test__card-meta">
+                            Progreso: <strong><output id="test-progress-text">0 / 26</output></strong>
+                        </span>
+                    </header>
+
+                    <form id="test-step-2-form" class="test__form" novalidate>
+                        <div class="test__questions" id="test-questions">
+                            <fieldset class="test__question" data-question="1" data-correct="C">
+                                <legend>Pregunta <strong>1 / 26</strong></legend>
+                                <p class="test__question-prompt">I _______ a student</p>
+                                <div class="test__options">
+                                    <label class="test__option"><input type="radio" name="q1" value="A" required> <span>A) is</span></label>
+                                    <label class="test__option"><input type="radio" name="q1" value="B"> <span>B) are</span></label>
+                                    <label class="test__option"><input type="radio" name="q1" value="C"> <span>C) am</span></label>
+                                </div>
+                                <p class="test__option-error">Selecciona una opción para continuar.</p>
+                            </fieldset>
+
+                            <fieldset class="test__question" data-question="2" data-correct="A">
+                                <legend>Pregunta <strong>2 / 26</strong></legend>
+                                <p class="test__question-prompt">My brother and I ______ at home</p>
+                                <div class="test__options">
+                                    <label class="test__option"><input type="radio" name="q2" value="A" required> <span>A) aren't</span></label>
+                                    <label class="test__option"><input type="radio" name="q2" value="B"> <span>B) isn't</span></label>
+                                    <label class="test__option"><input type="radio" name="q2" value="C"> <span>C) am not</span></label>
+                                </div>
+                                <p class="test__option-error">Selecciona una opción para continuar.</p>
+                            </fieldset>
+
+                            <fieldset class="test__question" data-question="3" data-correct="B">
+                                <legend>Pregunta <strong>3 / 26</strong></legend>
+                                <p class="test__question-prompt">These trousers ______ new. They are old.</p>
+                                <div class="test__options">
+                                    <label class="test__option"><input type="radio" name="q3" value="A" required> <span>A) isn't</span></label>
+                                    <label class="test__option"><input type="radio" name="q3" value="B"> <span>B) aren't</span></label>
+                                    <label class="test__option"><input type="radio" name="q3" value="C"> <span>C) am not</span></label>
+                                </div>
+                                <p class="test__option-error">Selecciona una opción para continuar.</p>
+                            </fieldset>
+
+                            <fieldset class="test__question" data-question="4" data-correct="B">
+                                <legend>Pregunta <strong>4 / 26</strong></legend>
+                                <p class="test__question-prompt">She ______ a big house</p>
+                                <div class="test__options">
+                                    <label class="test__option"><input type="radio" name="q4" value="A" required> <span>A) have got</span></label>
+                                    <label class="test__option"><input type="radio" name="q4" value="B"> <span>B) has got</span></label>
+                                    <label class="test__option"><input type="radio" name="q4" value="C"> <span>C) aren't</span></label>
+                                </div>
+                                <p class="test__option-error">Selecciona una opción para continuar.</p>
+                            </fieldset>
+
+                            <fieldset class="test__question" data-question="5" data-correct="A">
+                                <legend>Pregunta <strong>5 / 26</strong></legend>
+                                <p class="test__question-prompt">____ he ___ a bike?</p>
+                                <div class="test__options">
+                                    <label class="test__option"><input type="radio" name="q5" value="A" required> <span>A) Has / got</span></label>
+                                    <label class="test__option"><input type="radio" name="q5" value="B"> <span>B) Does / have</span></label>
+                                    <label class="test__option"><input type="radio" name="q5" value="C"> <span>C) Have / got</span></label>
+                                </div>
+                                <p class="test__option-error">Selecciona una opción para continuar.</p>
+                            </fieldset>
+
+                            <fieldset class="test__question" data-question="6" data-correct="B">
+                                <legend>Pregunta <strong>6 / 26</strong></legend>
+                                <p class="test__question-prompt">___ you like coffee?</p>
+                                <div class="test__options">
+                                    <label class="test__option"><input type="radio" name="q6" value="A" required> <span>A) are</span></label>
+                                    <label class="test__option"><input type="radio" name="q6" value="B"> <span>B) do</span></label>
+                                    <label class="test__option"><input type="radio" name="q6" value="C"> <span>C) does</span></label>
+                                </div>
+                                <p class="test__option-error">Selecciona una opción para continuar.</p>
+                            </fieldset>
+
+                            <fieldset class="test__question" data-question="7" data-correct="B">
+                                <legend>Pregunta <strong>7 / 26</strong></legend>
+                                <p class="test__question-prompt">He ____ waiting for the bus</p>
+                                <div class="test__options">
+                                    <label class="test__option"><input type="radio" name="q7" value="A" required> <span>A) are</span></label>
+                                    <label class="test__option"><input type="radio" name="q7" value="B"> <span>B) is</span></label>
+                                    <label class="test__option"><input type="radio" name="q7" value="C"> <span>C) am</span></label>
+                                </div>
+                                <p class="test__option-error">Selecciona una opción para continuar.</p>
+                            </fieldset>
+
+                            <fieldset class="test__question" data-question="8" data-correct="A">
+                                <legend>Pregunta <strong>8 / 26</strong></legend>
+                                <p class="test__question-prompt">I ________ to the gym every day</p>
+                                <div class="test__options">
+                                    <label class="test__option"><input type="radio" name="q8" value="A" required> <span>A) am going</span></label>
+                                    <label class="test__option"><input type="radio" name="q8" value="B"> <span>B) go</span></label>
+                                    <label class="test__option"><input type="radio" name="q8" value="C"> <span>C) goes</span></label>
+                                </div>
+                                <p class="test__option-error">Selecciona una opción para continuar.</p>
+                            </fieldset>
+
+                            <fieldset class="test__question" data-question="9" data-correct="C">
+                                <legend>Pregunta <strong>9 / 26</strong></legend>
+                                <p class="test__question-prompt">Right now, I ______ the answer</p>
+                                <div class="test__options">
+                                    <label class="test__option"><input type="radio" name="q9" value="A" required> <span>A) don't know</span></label>
+                                    <label class="test__option"><input type="radio" name="q9" value="B"> <span>B) am not knowing</span></label>
+                                    <label class="test__option"><input type="radio" name="q9" value="C"> <span>C) doesn't know</span></label>
+                                </div>
+                                <p class="test__option-error">Selecciona una opción para continuar.</p>
+                            </fieldset>
+
+                            <fieldset class="test__question" data-question="10" data-correct="B">
+                                <legend>Pregunta <strong>10 / 26</strong></legend>
+                                <p class="test__question-prompt">I ________ History when the phone ______</p>
+                                <div class="test__options">
+                                    <label class="test__option"><input type="radio" name="q10" value="A" required> <span>A) studied / ring</span></label>
+                                    <label class="test__option"><input type="radio" name="q10" value="B"> <span>B) was studying / rang</span></label>
+                                    <label class="test__option"><input type="radio" name="q10" value="C"> <span>C) were studying / was ringing</span></label>
+                                </div>
+                                <p class="test__option-error">Selecciona una opción para continuar.</p>
+                            </fieldset>
+
+                            <fieldset class="test__question" data-question="11" data-correct="C">
+                                <legend>Pregunta <strong>11 / 26</strong></legend>
+                                <p class="test__question-prompt">How long _____ you _____ to London?</p>
+                                <div class="test__options">
+                                    <label class="test__option"><input type="radio" name="q11" value="A" required> <span>A) do / be</span></label>
+                                    <label class="test__option"><input type="radio" name="q11" value="B"> <span>B) does / are</span></label>
+                                    <label class="test__option"><input type="radio" name="q11" value="C"> <span>C) have / been</span></label>
+                                </div>
+                                <p class="test__option-error">Selecciona una opción para continuar.</p>
+                            </fieldset>
+
+                            <fieldset class="test__question" data-question="12" data-correct="A">
+                                <legend>Pregunta <strong>12 / 26</strong></legend>
+                                <p class="test__question-prompt">This time next year I ___________ at university</p>
+                                <div class="test__options">
+                                    <label class="test__option"><input type="radio" name="q12" value="A" required> <span>A) will be studying</span></label>
+                                    <label class="test__option"><input type="radio" name="q12" value="B"> <span>B) will have studied</span></label>
+                                    <label class="test__option"><input type="radio" name="q12" value="C"> <span>C) will study</span></label>
+                                </div>
+                                <p class="test__option-error">Selecciona una opción para continuar.</p>
+                            </fieldset>
+
+                            <fieldset class="test__question" data-question="13" data-correct="A">
+                                <legend>Pregunta <strong>13 / 26</strong></legend>
+                                <p class="test__question-prompt">I __________ work a lot today. I'm meeting my boss</p>
+                                <div class="test__options">
+                                    <label class="test__option"><input type="radio" name="q13" value="A" required> <span>A) must</span></label>
+                                    <label class="test__option"><input type="radio" name="q13" value="B"> <span>B) have to</span></label>
+                                    <label class="test__option"><input type="radio" name="q13" value="C"> <span>C) doesn't have to</span></label>
+                                </div>
+                                <p class="test__option-error">Selecciona una opción para continuar.</p>
+                            </fieldset>
+
+                            <fieldset class="test__question" data-question="14" data-correct="C">
+                                <legend>Pregunta <strong>14 / 26</strong></legend>
+                                <p class="test__question-prompt">John is at school. He ______ be in the park</p>
+                                <div class="test__options">
+                                    <label class="test__option"><input type="radio" name="q14" value="A" required> <span>A) mustn't</span></label>
+                                    <label class="test__option"><input type="radio" name="q14" value="B"> <span>B) doesn't have to</span></label>
+                                    <label class="test__option"><input type="radio" name="q14" value="C"> <span>C) cannot</span></label>
+                                </div>
+                                <p class="test__option-error">Selecciona una opción para continuar.</p>
+                            </fieldset>
+
+                            <fieldset class="test__question" data-question="15" data-correct="B">
+                                <legend>Pregunta <strong>15 / 26</strong></legend>
+                                <p class="test__question-prompt">Translate into English: «Su proyecto actual le asegurará un ascenso»</p>
+                                <div class="test__options">
+                                    <label class="test__option"><input type="radio" name="q15" value="A" required> <span>A) Her actual project will make her sure a promotion</span></label>
+                                    <label class="test__option"><input type="radio" name="q15" value="B"> <span>B) Her current project will assure her of a promotion</span></label>
+                                </div>
+                                <p class="test__option-error">Selecciona una opción para continuar.</p>
+                            </fieldset>
+
+                            <fieldset class="test__question" data-question="16" data-correct="C">
+                                <legend>Pregunta <strong>16 / 26</strong></legend>
+                                <p class="test__question-prompt">I would help you if you ______ me politely</p>
+                                <div class="test__options">
+                                    <label class="test__option"><input type="radio" name="q16" value="A" required> <span>A) ask</span></label>
+                                    <label class="test__option"><input type="radio" name="q16" value="B"> <span>B) asked</span></label>
+                                    <label class="test__option"><input type="radio" name="q16" value="C"> <span>C) had asked</span></label>
+                                </div>
+                                <p class="test__option-error">Selecciona una opción para continuar.</p>
+                            </fieldset>
+
+                            <fieldset class="test__question" data-question="17" data-correct="A">
+                                <legend>Pregunta <strong>17 / 26</strong></legend>
+                                <p class="test__question-prompt">That man ______ daughter is your friend is crying</p>
+                                <div class="test__options">
+                                    <label class="test__option"><input type="radio" name="q17" value="A" required> <span>A) whose</span></label>
+                                    <label class="test__option"><input type="radio" name="q17" value="B"> <span>B) whom</span></label>
+                                    <label class="test__option"><input type="radio" name="q17" value="C"> <span>C) who's</span></label>
+                                </div>
+                                <p class="test__option-error">Selecciona una opción para continuar.</p>
+                            </fieldset>
+
+                            <fieldset class="test__question" data-question="18" data-correct="A">
+                                <legend>Pregunta <strong>18 / 26</strong></legend>
+                                <p class="test__question-prompt">He made a big mistake _______ made him feel bad and useless</p>
+                                <div class="test__options">
+                                    <label class="test__option"><input type="radio" name="q18" value="A" required> <span>A) what</span></label>
+                                    <label class="test__option"><input type="radio" name="q18" value="B"> <span>B) who</span></label>
+                                    <label class="test__option"><input type="radio" name="q18" value="C"> <span>C) whose</span></label>
+                                </div>
+                                <p class="test__option-error">Selecciona una opción para continuar.</p>
+                            </fieldset>
+
+                            <fieldset class="test__question" data-question="19" data-correct="C">
+                                <legend>Pregunta <strong>19 / 26</strong></legend>
+                                <p class="test__question-prompt">Jane ____ told about the family dinner, so she didn't come</p>
+                                <div class="test__options">
+                                    <label class="test__option"><input type="radio" name="q19" value="A" required> <span>A) didn't</span></label>
+                                    <label class="test__option"><input type="radio" name="q19" value="B"> <span>B) weren't</span></label>
+                                    <label class="test__option"><input type="radio" name="q19" value="C"> <span>C) wasn't</span></label>
+                                </div>
+                                <p class="test__option-error">Selecciona una opción para continuar.</p>
+                            </fieldset>
+
+                            <fieldset class="test__question" data-question="20" data-correct="B">
+                                <legend>Pregunta <strong>20 / 26</strong></legend>
+                                <p class="test__question-prompt">My boss _____ _____ ___ ____ ___ an important order in an hour</p>
+                                <div class="test__options">
+                                    <label class="test__option"><input type="radio" name="q20" value="A" required> <span>A) was going to be sent</span></label>
+                                    <label class="test__option"><input type="radio" name="q20" value="B"> <span>B) is going to be sent</span></label>
+                                    <label class="test__option"><input type="radio" name="q20" value="C"> <span>C) am going to be sent</span></label>
+                                </div>
+                                <p class="test__option-error">Selecciona una opción para continuar.</p>
+                            </fieldset>
+
+                            <fieldset class="test__question" data-question="21" data-correct="C">
+                                <legend>Pregunta <strong>21 / 26</strong></legend>
+                                <p class="test__question-prompt">I'm ______ my house redecorated next week</p>
+                                <div class="test__options">
+                                    <label class="test__option"><input type="radio" name="q21" value="A" required> <span>A) going</span></label>
+                                    <label class="test__option"><input type="radio" name="q21" value="B"> <span>B) wanting</span></label>
+                                    <label class="test__option"><input type="radio" name="q21" value="C"> <span>C) having</span></label>
+                                </div>
+                                <p class="test__option-error">Selecciona una opción para continuar.</p>
+                            </fieldset>
+
+                            <fieldset class="test__question" data-question="22" data-correct="B">
+                                <legend>Pregunta <strong>22 / 26</strong></legend>
+                                <p class="test__question-prompt">The man asked me _______ I had been at home that night</p>
+                                <div class="test__options">
+                                    <label class="test__option"><input type="radio" name="q22" value="A" required> <span>A) when</span></label>
+                                    <label class="test__option"><input type="radio" name="q22" value="B"> <span>B) whether</span></label>
+                                    <label class="test__option"><input type="radio" name="q22" value="C"> <span>C) where</span></label>
+                                </div>
+                                <p class="test__option-error">Selecciona una opción para continuar.</p>
+                            </fieldset>
+
+                            <fieldset class="test__question" data-question="23" data-correct="A">
+                                <legend>Pregunta <strong>23 / 26</strong></legend>
+                                <p class="test__question-prompt">Turn into the passive voice: «People think that Teddy was in Paris»</p>
+                                <div class="test__options">
+                                    <label class="test__option"><input type="radio" name="q23" value="A" required> <span>A) Teddy is thought to have been in Paris</span></label>
+                                    <label class="test__option"><input type="radio" name="q23" value="B"> <span>B) Teddy was thought to be in Paris</span></label>
+                                </div>
+                                <p class="test__option-error">Selecciona una opción para continuar.</p>
+                            </fieldset>
+
+                            <fieldset class="test__question" data-question="24" data-correct="C">
+                                <legend>Pregunta <strong>24 / 26</strong></legend>
+                                <p class="test__question-prompt">I found a new _____. I start _______ next week</p>
+                                <div class="test__options">
+                                    <label class="test__option"><input type="radio" name="q24" value="A" required> <span>A) work, work</span></label>
+                                    <label class="test__option"><input type="radio" name="q24" value="B"> <span>B) work, working</span></label>
+                                    <label class="test__option"><input type="radio" name="q24" value="C"> <span>C) job, working</span></label>
+                                </div>
+                                <p class="test__option-error">Selecciona una opción para continuar.</p>
+                            </fieldset>
+
+                            <fieldset class="test__question" data-question="25" data-correct="A">
+                                <legend>Pregunta <strong>25 / 26</strong></legend>
+                                <p class="test__question-prompt">I decided ______ because this was what I really wanted</p>
+                                <div class="test__options">
+                                    <label class="test__option"><input type="radio" name="q25" value="A" required> <span>A) to travel</span></label>
+                                    <label class="test__option"><input type="radio" name="q25" value="B"> <span>B) travelling</span></label>
+                                    <label class="test__option"><input type="radio" name="q25" value="C"> <span>C) travel</span></label>
+                                </div>
+                                <p class="test__option-error">Selecciona una opción para continuar.</p>
+                            </fieldset>
+
+                            <fieldset class="test__question" data-question="26" data-correct="B">
+                                <legend>Pregunta <strong>26 / 26</strong></legend>
+                                <p class="test__question-prompt">Mary suggested _______ the rest of the friends before making a plan</p>
+                                <div class="test__options">
+                                    <label class="test__option"><input type="radio" name="q26" value="A" required> <span>A) that I ask</span></label>
+                                    <label class="test__option"><input type="radio" name="q26" value="B"> <span>B) asking</span></label>
+                                    <label class="test__option"><input type="radio" name="q26" value="C"> <span>C) should ask</span></label>
+                                </div>
+                                <p class="test__option-error">Selecciona una opción para continuar.</p>
+                            </fieldset>
+                        </div>
+
+                        <div class="test__actions">
+                            <span class="test__actions-note">Si no estás seguro, elige la opción que más te convenza. No hay penalización.</span>
+                            <div class="test__actions-buttons">
+                                <button type="button" class="btn btn--ghost" data-test-prev>
+                                    ← Volver a mis datos
+                                </button>
+                                <button type="submit" class="btn btn--primary">
+                                    Enviar mi prueba
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+            <!-- ========== PASO 3: ÉXITO ========== -->
+            <section id="test-step-3" class="test__step" aria-labelledby="test-step-3-title">
+                <div class="test__card">
+                    <div class="test__success" role="status">
+                        <div class="test__success__icon" aria-hidden="true">✓</div>
+                        <h2 class="test__success__title" id="test-step-3-title">¡Tu prueba de nivel ha sido entregada!</h2>
+                        <p class="test__success__text">
+                            En menos de <strong>48 horas</strong> recibirás en <strong><span id="test-success-email">tu correo</span></strong>
+                            un informe personalizado con tu nivel estimado (A1–C2), tus puntos fuertes
+                            y la recomendación a medida de uno de nuestros profesores nativos.
+                        </p>
+                        <p class="test__success__text">
+                            Si quieres, puedes reservar ahora una <strong>clase de prueba gratuita</strong> con un profesor nativo.
+                            Sin compromiso, 25 minutos para que pruebes nuestra metodología.
+                        </p>
+                        <div class="test__success__actions">
+                            <a href="index.html" class="btn btn--ghost">← Volver al inicio</a>
+                            <a href="index.html#contact" class="btn btn--primary">
+                                Reservar clase de prueba
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer__container">
+            <p>© <span id="year">2026</span> Translating The World · Todos los derechos reservados</p>
+            <p>
+                <a href="index.html">Inicio</a> ·
+                <a href="prueba-de-nivel.html">Prueba de nivel</a> ·
+                <a href="politica-de-privacidad.html">Privacidad</a> ·
+                <a href="politica-cookies.html">Cookies</a> ·
+                <a href="aviso-legal.html">Aviso legal</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Botón flotante de WhatsApp -->
+    <a href="https://wa.me/34633966026" target="_blank" rel="noopener" class="whatsapp-float" aria-label="Escríbenos por WhatsApp al 633 966 026">
+        <svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0) Copyright 2024 Fonticons, Inc. --><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
+    </a>
+
+    <script src="script.js" defer></script>
+</body>
+</html>

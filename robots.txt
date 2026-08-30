@@ -1,0 +1,16 @@
+# robots.txt — Translating The World
+# https://www.translatingtheworld.com/robots.txt
+
+User-agent: *
+Allow: /
+Disallow: /photos/
+
+# Sitemap
+Sitemap: https://www.translatingtheworld.com/sitemap.xml
+
+# Bots específicos
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /

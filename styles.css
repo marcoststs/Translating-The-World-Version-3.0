@@ -987,6 +987,20 @@ em { font-style: italic; color: var(--c-accent); font-weight: 500; }
 .footer__col a:hover { color: white; }
 .footer__col--legal { text-align: right; align-items: flex-end; }
 .footer__col--legal p { color: rgba(255, 255, 255, 0.5); font-size: 0.8rem; margin-top: 0.5rem; }
+/* Botón "Gestionar cookies" del footer — reabre el panel de preferencias (RGPD) */
+.footer-cookie-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    font: inherit;
+    font-size: 0.92rem;
+    color: rgba(255, 255, 255, 0.85);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: color 0.2s;
+}
+.footer-cookie-btn:hover { color: white; }
 
 /* ==========================================================
    ANIMATIONS

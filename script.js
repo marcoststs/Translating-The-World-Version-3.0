@@ -401,6 +401,12 @@
 
         const handleAction = (action) => {
             console.log('[cookies] action:', action);
+            // "Configurar" solo abre el modal de preferencias;
+            // el banner y el modal se cierran al concluir el consentimiento.
+            if (action === 'config') {
+                openModal();
+                return;
+            }
             if (typeof actions[action] === 'function') {
                 actions[action]();
             }
@@ -477,6 +483,13 @@
         return { open: openModal };
     })();
     window.CookieConsent = CookieConsent;
+
+    // Botón "Gestionar cookies" del footer — permite cambiar la decisión
+    // en cualquier momento (requisito RGPD), no solo en el primer aviso
+    const cookieSettingsBtn = document.getElementById('cookie-settings-btn');
+    if (cookieSettingsBtn && CookieConsent) {
+        cookieSettingsBtn.addEventListener('click', () => CookieConsent.open());
+    }
 
     /* ---------- Prueba de nivel (página dedicada) ---------- */
     const LevelTestPage = (() => {
@@ -662,4 +675,37 @@
         return { goToStep };
     })();
     window.LevelTestPage = LevelTestPage;
+
+    /* ---------- "¿Cuándo empezar?" — meses dinámicos ----------
+       Genera automáticamente el mes siguiente y los 5 posteriores
+       (6 meses en total) a partir de la fecha actual, para que
+       las opciones nunca queden obsoletas. */
+    (function () {
+        const sel = document.getElementById('when');
+        if (!sel) return;
+
+        const MESES = [
+            'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio',
+            'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'
+        ];
+
+        const now = new Date();
+        // Empezamos en el mes siguiente al actual
+        let m = now.getMonth() + 1;   // 0-based → mes siguiente
+        let y = now.getFullYear();
+        if (m > 11) { m = 0; y += 1; }
+
+        for (let i = 0; i < 6; i++) {
+            const label = MESES[m] + ' ' + y;
+            const value = MESES[m].toLowerCase().normalize('NFD')
+                .replace(/[\u0300-\u036f]/g, '') + '-' + y;
+            const opt = new Option(label, value);
+            sel.appendChild(opt);
+            m += 1;
+            if (m > 11) { m = 0; y += 1; }
+        }
+
+        sel.appendChild(new Option('Sin preferencia', 'sin-preferencia'));
+        sel.appendChild(new Option('Otro', 'otro'));
+    })();
 })();
